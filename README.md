@@ -3,7 +3,7 @@
 docker network create jenkins
 docker volume create jenkins-docker-certs
 
-//Aqui se levantará el deploy en el puerto 3000(adaptar al puerto de nuestra app)
+//Aqui se levantará el deploy en el puerto 3000(adaptar al puerto de nuestra app tanto aqui como en el Jenkinsfile)
 docker container run --name jenkins-docker --rm --detach \
   --privileged --network jenkins --network-alias docker \
   --env DOCKER_TLS_CERTDIR=/certs \
